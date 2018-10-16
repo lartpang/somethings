@@ -1,0 +1,436 @@
+<html>
+
+<head>
+<title>UnicornViewer</title>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+</head>
+
+<body>
+<div align="center"><center>
+
+<table border="0" width="700" cellpadding="0" cellspacing="0">
+  <tr>
+    <td>UnicornViewer: A software to view PDG and multi-page TIFF.<p>作者：马健<br>
+    邮箱：<a href="mailto:stronghorse@tom.com">stronghorse@tom.com<br>
+    </a>主页：<a target="_blank" href="http://www.comicer.com/stronghorse/">老马的原创空间</a></p>
+    <p><a href="#FAQ">FAQ<br>
+    </a><a href="#使用说明">使用说明<br>
+    </a>&nbsp;&nbsp;&nbsp; <a href="#软件安装/删除">一、软件安装/删除<br>
+    </a>&nbsp;&nbsp;&nbsp; <a href="#软件使用">二、软件使用</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#快捷键表">快捷键表</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#设置选项">设置选项</a><br>
+	<a href="#鸣谢">附录A 鸣谢<br>
+    </a><a href="#版本更新记录">附录B 版本更新记录</a></p>
+    <h1><a name="FAQ"><font color="#FF0000">FAQ</font></a></h1>
+    <p>Q：UnicornViewer是什么？<br>
+    A：这是一个针对扫描版电子文档的浏览器，具有下列功能：<ol>
+      <li>支持PDG格式、多页TIFF格式。PDG格式仅支持图像版0xH、1xH、28H、AxH，不支持FFH、6xH和文本PDG。支持名为PDG，实为PNG的文件。</li>
+		<li>支持连续翻页、并排显示、多种缩放方式及打印；支持背景色及背景图案。</li>
+		<li>支持直接从ZIP文件读取PDG，中间不生成任何临时文件。支持加密ZIP并能记忆密码。不过有一个限制：ZIP文件中只能有一个文件夹下有PDG，不能在多个文件夹下有PDG。通常大家都是一本书一个ZIP，所以这个不会有什么问题。</li>
+		<li>
+		现场保存/恢复功能，也就是说如果看书时中途退出，下次启动后将自动恢复退出时打开的书和阅读位置。这样午休看书就不用担心下次进来时页码记不住了，也根本没必要记。如果觉得没有必要，此功能也可通过选项关闭。</li>
+		<li>
+		书签功能。书签包括文档的路径和当前浏览位置。这样在退出某本书前把它添加到书签中，以后再想看这本书时直接从书签中打开即可。需要同时交叉看多本书时，此功能可以弥补现场保存/恢复功能的局限。最近打开过的书签可以通过“文件-&gt;最近书签”菜单快速打开。</li>
+		<li>
+		PDG查找功能。文件查找可按照关键字搜索PDG文件夹/zip文件名、Bookcontents.dat、BookInfo.dat；PDG目录查找可以按照关键字搜索
+		当前PDG目录（书签）。</li>
+		<li>
+		PDG目录编辑功能，与PdgCntEditor联动，实现PDG目录编辑。自身可以编辑BookInfo.dat。</li>
+		<li>
+		自定义快捷键功能，可以为所有菜单重新定义快捷键。</li>
+		<li>
+		并排显示时支持从右往左翻页，以符合竖排书籍的阅读习惯。</li>
+		<li>
+		支持OCR，OCR引擎为微软Office 2003所带的Microsoft Office Document Imaging (MODI)，支持英文、简体中文、繁体中文、日文。</li>
+		<li>
+		支持裁边，以有效利用显示区域，或去掉扫描造成的黑边。裁边只是在显示、打印时裁，对原始文件没有任何影响。</li>
+      </ol>
+      <p>
+	用户在使用本软件前务必先认清以下事实：<ul>
+      <li>本文讨论PDG浏览方法，仅出于研究目的，无意对PDG版权进行任何形式的侵犯，也不希望任何人用本文讨论的工具或方法从事侵权活动。如果需要获取PDG文件，请通过购买点卡等方式，以合法的途径获得。</li>
+      <li>本文假定用户通过合法的手段获得PDG文件，只是由于希望能够在比超星浏览器更好、更方便的浏览器上阅读，才需要使用本文讨论的方法和软件。</li>
+		<li>请勿将本软件用于非法目的。使用本软件造成的一切后果（包括法律后果）由使用者自行承担。</li>
+      </ul>
+      <p>另外为了加快翻页速度，软件需要在内存中对页面进行缓存，因此不建议在内存低于512 MB的机器上使用。<p>Q：为什么要开发UnicornViewer？<br>
+      A：因为我希望有一个比现有浏览器更好用的软件，来看PDG和TIFF格式文档。<p>Q：UnicornViewer收费吗？<br>
+    A：UnicornViewer是一个“友情软件”（Friendware），用户在承诺不用于商业目的，也不对文件及其附件进行任何更改的条件下，不需要为使用该软件付任何费用，最多是在BBS上看到我发帖子灌水时（我的ID一般是strnghrs），进去捧个人场，作为友情回报；或者在年节时<a
+    href="mailto:stronghorse@tom.com">发个email</a>问声好（所以叫“友情软件”）。我承诺绝不在程序中暗藏任何商业广告、木马，但不承诺为使用UnicornViewer的后果承担任何责任。如果您需要将它用于商业目的，或加入您的网站，请<a
+    href="mailto:stronghorse@tom.com">与我联系</a>，否则保留追究一切责任的权利。</p>
+    <p>
+	Q：为什么UnicornViewer不支持PDF、DjVu格式？<br>
+    A：从v0.13开始支持。<p>
+	Q：UnicornViewer为什么不支持文本PDG？6xH格式PDG怎么浏览？<br>
+	A：文本PDG本来就是PDF文件，建议用Pdg2Pic解码成PDF，然后用Acrobat合并、浏览。<br>
+	6xH格式请先用车明先生的Pizza解密后浏览，Pizza可以在<a href="http://www.readfree.net/bbs/index.php" target=_blank>网上读书园地论坛</a>上用虚拟论坛币购买。<p>
+	Q：为什么有些PDG文件打开后会出现空白页？<br>
+	A：可能的原因包括但不限于：遇到了6xH格式的PDG文件、文件已损坏、遇到文本PDG。具体可以用“文件-&gt;属性”查看加密格式，或用PdgThumbViewer进行批量检查，解决方法见PdgThumbViewer使用说明。<p>
+	Q：为什么UnicornViewer不支持RAR？为什么ZIP不支持多页TIFF？<br>
+	A：因为RAR文件没有TOC，详情请google我写的《乱谈zip、rar文件格式》。<br>
+	如果要支持ZIP中的多页TIFF而又不生成临时文件，就需要在内存中保留一份解压后的TIFF文件，实在太浪费了，所以不支持。<p>
+	Q：如何提高软件的翻页速度，减少内存占用？<br>
+	A：措施如下：<ol>
+		<li>选择背景色，而不使用背景图案。这样可以省掉一点内存，及背景合成的时间。</li>
+		<li>看快速版时选择“实际大小”，看清晰版时选择“适合宽度”、“适合高度”，尽量不要选择按百分比缩放。
+		看快速版时选择“实际大小”，不仅省时间和内存，图像效果也会好一点。</li>
+		<li>如果可能，下载后先用Pizza解密再收藏，免得浏览的时候再解密。当然用Pizza处理后别忘了用PdgThumbViewer检查一下。</li>
+		</ol>
+		<p>Q：很多PDG版电子文档没有目录文件，怎么办？<br>
+		A：可以到<a href="http://www.readfree.net/bbs/index.php" target=_blank>网上读书园地论坛</a>下载PdgCntEditor，自己做目录。</p>
+	<p>Q：如何与PdgCntEditor联动，实现PDG目录编辑？<br>
+	A：首先需要下载PdgCntEditor压缩包，将其中的文件解压到UnicornViewer所在文件夹。以后需要编辑目录时，打开需要编辑的PDG书籍，选“文件-&gt;PDG-&gt;编辑PDG目录（文本）”或“文件-&gt;PDG-&gt;编辑PDG目录（树形）”，即可启动PdgCntEditor进行编辑。在PdgCntEditor中保存目录后，会自动通知UnicornViewer刷新显示。</p>
+	<p>Q：为什么有时候放大镜不起作用？<br>
+	A：只有当图像处于缩小状态时，放大镜才会起作用。如果图像已经处在放大或“实际大小”状态，放大镜将不再起作用。</p>
+	<p>Q：“PDG文件查找”、“PDG目录查找”功能支持多关键字吗？<br>
+	A：当然，关键字之间用空格分隔，关键字之间的关系是“与”关系。</p>
+	<p>Q：为什么要支持名为PDG，实为PNG的文件？<br>A：我个人认为，PDG文件的功绩之一是定义了一个文件命名规范，可以区别封面、目录、正文等页面。但是PDG文件只支持黑白、彩色、256级灰度图像，而不支持16级灰度、4级灰度等的图像。如果扫描时使用的扫描仪高级到能够智能区别彩色和黑白页面，PDG这样做并没有什么问题；但是如果扫描仪没这么高级，烦恼就来了：为了给某本书补页，我曾经托人帮我扫描过几页，由于扫描者、扫描仪、
+	书籍纸张等的综合原因，导致这几页扫完后彩色不彩色、黑白不黑白，直接存储为JPG未免太过浪费；减色为黑白图像则损失太大，字都缺胳膊少腿；最佳选择是减色成16级灰度，然后存储成PNG，但是偏偏这样的文件不符合PDG规范，从那个时候起我就下定决心要在未来的PDG浏览器中加入对PNG的支持。<br>
+	但是UnicornViewer对于PNG文件有限制，并且仅在使用背景图案时出现：<br>
+	1、对于色深小于8bit的调色板图像，将强制转换成256级灰度，如果原先是彩色调色板则会损失颜色。<br>
+	2、对于色深为8bit的调色板图像，如果调色板并非标准256级灰度调色板，则背景为白色而不是背景图案。<br>
+	如果使用背景色而不是背景图案，以上限制不存在。</p>
+	<p>Q：为什么要支持名为PDG，实为DjVu的文件？<br>
+	A：有时候PDG文件缺页，刚好可以从中美百万补，格式之间转来转去的也没啥意思，还可能造成质量损失，不如直接支持算了。<br>
+	<br>
+	Q：为什么要支持名为PDG，实为单页TIFF的文件？<br>
+	A：现在自己扫书的人越来越多，扫描后的图片一般黑白的存储为CCITT 
+	G4压缩的TIFF文件，彩色/灰度存储为JPG文件。当然也有好事者将彩色/灰度存储为JEPG压缩的TIFF，但是这种格式的兼容性实在太差，一般不主张。<br>
+	这种自扫图像最麻烦的是没有一个合适的浏览器进行浏览，或转换成PDF等格式；文件命名也缺乏规范，都是随心所欲。与此相比，PDG的命名要更严谨，UnicornViewer、Pdg2Pic/FreePic2PDF等第三方工具也比较成熟，完全可以加以利用。<br>
+	从格式上说，JPG文件只要改成符合PDG文件命名规范的名字即可，但TIFF文件即使改名，也不能被常规PDG浏览器浏览，但是我又讨厌在不同格式之间转来转去，所以就直接支持名为PDG，实为TIFF的文件。这样自己扫书后，用PdgRenamer改成符合PDG规范的文件名，即可直接浏览。</p>
+	<p>Q：如何在简体中文环境下OCR繁体中文、日文？<br>
+	A：请google我写的《在简体中文Office 2003下OCR繁体中文、日文、韩文》。<br>
+	由于种种原因，如果需要识别的中文、日文少于8个字，MODI会识别不出，因此OCR时注意选择范围内的文字不要少于8个字。</p>
+		<h2><a name="使用说明"><font color="#FF0000">使用说明</font></a></h2>
+    <p><a name="软件安装/删除"><font color="#FF0000">一、软件安装/删除</font></a></p>
+    <p>本软件安装非常简单：创建一个目录，用WinZip将下载下来的ZIP包解压缩到该目录即可。</p>
+    <p>本软件的删除也很简单：直接删除从ZIP包中解压缩出来的所有文件及运行过程中生成的文件即可。</p>
+    <p>ZIP包中包括下列文件：<ol>
+      <li>UnicornViewer.exe。这是软件的主程序。</li>
+      <li>UnicornViewer.htm。本帮助文件。</li>
+    </ol>
+    <p>如果您下载到的ZIP包中还包括其它文件，毫无疑问不是我放进去的，有广告或木马之嫌疑，请立即删除。</p>
+    <p>另外程序运行过程中还会生成以下文件：<ol>
+      <li>UnicornViewer.ini。这个是参数保存文件，第一次更改参数后生成。退出UnicornViewer，删除此文件，再重启UnicornViewer，即可恢复缺省参数。</li>
+		<li>UnicornViewer.pwd。ZIP文件口令表，纯文本文件。</li>
+		<li>UnicornViewer.bmk。书签文件。只有在保存过书签后才会产生此文件。</li>
+		<li>UnicornViewer.rld。现场记忆文件。如果选择了“自动恢复”，退出程序时生成此文件。</li>
+    </ol>
+    <p><a name="软件使用"><font color="#FF0000">二、软件使用</font></a></p>
+    <p><a name="快捷键表"><font color="#FF0000"><b>快捷键表</b></font></a></p>
+	<p>无对应菜单的快捷键：</p>
+	<table border="1" width="100%" id="table4">
+		<tr>
+			<td bgcolor="#C0C0C0" align="center">功能</td>
+			<td bgcolor="#C0C0C0" align="center">快捷键</td>
+			</tr>
+		<tr>
+			<td>退出程序/缩到最小/退出全屏</td>
+			<td>ESC</td>
+		</tr>
+		<tr>
+			<td>页面滚动</td>
+			<td>上、下、左右箭头键</td>
+		</tr>
+		<tr>
+			<td>上一页</td>
+			<td>PgUp、回格（Backspace）</td>
+			</tr>
+		<tr>
+			<td>下一页</td>
+			<td>PgDn、空格</td>
+			</tr>
+	</table>
+	<p>有对应菜单的快捷键：</p>
+	<table border="1" width="100%" id="table2">
+		<tr>
+			<td bgcolor="#C0C0C0" align="center">功能</td>
+			<td bgcolor="#C0C0C0" align="center">快捷键</td>
+			<td bgcolor="#C0C0C0" align="center">功能</td>
+			<td bgcolor="#C0C0C0" align="center">快捷键</td>
+		</tr>
+		<tr>
+			<td>放大</td>
+			<td>+、Ctrl+鼠标滚轮</td>
+			<td>全屏</td>
+			<td>F</td>
+		</tr>
+		<tr>
+			<td>缩小</td>
+			<td>-、Ctrl+鼠标滚轮</td>
+			<td>打开文件</td>
+			<td>Ctrl+O</td>
+		</tr>
+		<tr>
+			<td>适合页面</td>
+			<td>Ctrl+1</td>
+			<td>打开PDG文件夹</td>
+			<td>Ctrl+D</td>
+		</tr>
+		<tr>
+			<td>适合宽度</td>
+			<td>Ctrl+2</td>
+			<td>新建窗口</td>
+			<td>Ctrl+N</td>
+		</tr>
+		<tr>
+			<td>适合高度</td>
+			<td>Ctrl+3</td>
+			<td>另存为</td>
+			<td>Ctrl+S</td>
+		</tr>
+		<tr>
+			<td>实际大小</td>
+			<td>Ctrl+4</td>
+			<td>关闭文件</td>
+			<td>Ctrl+W</td>
+		</tr>
+		<tr>
+			<td>100%</td>
+			<td>Ctrl+5</td>
+			<td>打印</td>
+			<td>Ctrl+P</td>
+		</tr>
+		<tr>
+			<td>单页/连续开关</td>
+			<td>Ctrl+Alt+1</td>
+			<td>属性</td>
+			<td>Ctrl+R</td>
+		</tr>
+		<tr>
+			<td>单排/并排开关</td>
+			<td>Ctrl+Alt+2</td>
+			<td>退出</td>
+			<td>Ctrl+Q</td>
+		</tr>
+		<tr>
+			<td>自定义缩放</td>
+			<td>Ctrl+M</td>
+			<td>设置</td>
+			<td>S</td>
+		</tr>
+		<tr>
+			<td>第一页</td>
+			<td>Home</td>
+			<td>帮助</td>
+			<td>F1</td>
+		</tr>
+		<tr>
+			<td>最末页</td>
+			<td>End</td>
+			<td>左旋90°</td>
+			<td>Ctrl+Shift+左箭头</td>
+		</tr>
+		<tr>
+			<td>显示/隐藏导航条</td>
+			<td>T</td>
+			<td>右旋90°</td>
+			<td>Ctrl+Shift+右箭头</td>
+		</tr>
+		<tr>
+			<td>页面跳转条</td>
+			<td>G</td>
+			<td>旋转180°</td>
+			<td>Ctrl+Alt+下箭头</td>
+		</tr>
+		<tr>
+			<td>复制当前PDG到文件夹</td>
+			<td>Ctrl+E</td>
+			<td>跳至指定页</td>
+			<td>Ctrl+G</td>
+		</tr>
+		</table>
+    	<p>对自定义快捷键的说明：</p>
+	<ol>
+		<li>通过“自定义快捷键”功能，允许用户为所有菜单项定义快捷键，并且一个菜单项允许定义多个快捷键。</li>
+		<li>自定义快捷键的优先级高于系统缺省快捷键，如果自定义快捷键与缺省快捷键有冲突，以自定义快捷键为准。</li>
+	</ol>
+	<p>对目录、缩略图中快捷键的说明：</p>
+	<ol>
+		<li>当输入焦点在左侧目录、缩略图中时，按上、下箭头键可以改变当前节点或缩略图，按下空格或回车键，将跳转到当前节点或缩略图所对应的页面。</li>
+		<li>在目录中，如果节点处下有子节点，按下左箭头键展开，按下右箭头键摺叠。</li>
+		<li>在缩略图中，左右箭头键的功能与上下箭头键的功能相同。</li>
+	</ol>
+<p><font color="#FF0000"><b><a name="设置选项">设置选项</a></b></font></p>
+	<p>本软件设置选项及其含义如下表所示：</p>
+		<table border="1" width="100%" id="table3">
+			<tr>
+				<td bgcolor="#C0C0C0" align="center">选项</td>
+				<td bgcolor="#C0C0C0" align="center">选中后的含义</td>
+			</tr>
+			<tr>
+				<td>如果有目录，则不显示缩略图</td>
+				<td>如果文档带目录，则隐藏缩略图栏。</td>
+			</tr>
+			<tr>
+				<td>无目录时用页码代替目录（TIFF）</td>
+				<td>用页码代替书签，仅对TIFF有效。与上面一个选项合用，在打开TIFF时可以不显示缩略图，以节省时间和空间。</td>
+			</tr>
+			<tr>
+				<td>页面背景</td>
+				<td>指定黑白页面的背景色或背景图案</td>
+			</tr>
+			<tr>
+				<td>全屏背景色</td>
+				<td>全屏状态下，页面区域外的颜色</td>
+			</tr>
+			<tr>
+				<td>所有文件集中在一个UnicornViewer里打开</td>
+				<td>选中则始终只有一个UnicornViewer在运行，否则从资源管理器里打开文件可能会出现多个UnicornViewer同时运行。</td>
+			</tr>
+			<tr>
+				<td>打开散页PDG时定位到第一页</td>
+				<td>选中则每次打开散页PDG时总是定位到第一页，否则定位到打开页</td>
+			</tr>
+			<tr>
+				<td>后台自动生成全部缩略图</td>
+				<td>自动生成全部缩略图，否则只生成需要显示的缩略图</td>
+			</tr>
+			<tr>
+				<td>全屏时鼠标点击翻页</td>
+				<td>左键后翻，右键前翻</td>
+			</tr>
+			<tr>
+				<td>全屏时隐藏滚动条</td>
+				<td>同字面含义</td>
+			</tr>
+			<tr>
+				<td>按下ESC键时退出程序</td>
+				<td>选中则退出程序，否则缩小到屏幕右下角</td>
+			</tr>
+			<tr>
+				<td>折行显示长目录项</td>
+				<td>同字面含义</td>
+			</tr>
+			<tr>
+				<td>启动时显示“页面跳转”条</td>
+				<td>同字面含义</td>
+			</tr>
+			<tr>
+				<td>程序启动时自动恢复到退出时的状态</td>
+				<td>即“现场恢复”功能</td>
+			</tr>
+		</table>
+    <h2><font color="#FF0000"><a name="鸣谢">附录A 鸣谢</a></font></h2>
+    <p>本软件的PDG解码器在开发过程中得到<a href="http://www.readfree.net" target=_blank>网上读书园地</a>成员车明（BECompanion）、hstong、
+    伊兹鱼、coolman和qdlsy，及<a href="http://bbs.rbook.net/" target=_blank>rbook</a>论坛mogaoku的大力支持与协助。
+    图像文件处理采用了Davide Pizzolato的<a target="_blank" href="http://www.xdp.it/">CxImage</a>，底层JPEG采用了<a target="_blank" href="http://www.ijg.org/">Independent 
+    JPEG Group</a>（独立JPEG小组）发布的<a target="_blank" href="ftp://ftp.simtel.net/pub/simtelnet/msdos/graphics/">JPEG 
+    LIB</a>源代码，PNG采用了<a target="_blank" href="http://www.libpng.org">libpng</a>组织提供的源代码，TIFF采用了<a target="_blank" href="http://www.libtiff.org/">libtiff</a>组织提供的源代码，<a target="_blank" href="http://www.zlib.net/">zlib</a>采用了ASM版（其实只有两个文件是ASM的）,DjVu文件操作基于<a target="_blank" href="http://sourceforge.net/projects/djvu/">djvulibre</a>源代码。ZIP文件处理采用了<a href="http://www.info-zip.org/pub/infozip/">Info-ZIP</a>提供的源代码。</p>
+		<p>本软件的界面参考了Adobe公司的Acrobat，和Andrew Zhezherun的WinDjView。</p>
+		<p>在此对以上组织和个人表示深切的谢意！</p>
+    <h2><a name="版本更新记录"><font color="#FF0000">附录B 版本更新记录</font></a></h2>
+    	<p>Version 0.12a<br>
+		新增功能：支持名为uvz，实为zip的文件。这样将zip文件更名为uvz，并与UnicornViewer建立关联，双击即可打开。<br>
+		新增功能：文件-&gt;PDG-&gt;编辑BookInfo.dat。<br>
+		新增功能：支持按照JPEG格式中的EXIF信息，自动对图像进行旋转。某些数码相机喜欢这个。<br>
+		功能增强：放宽格式检查，兼容某些第三方工具生成的不规范PDG。<br>
+		功能增强：改进图像显示代码，减少中间环节，以节省资源、加快显示速度。<br>
+		功能修正：对部分菜单项位置进行了调整。<br>
+		错误修正：在主窗口非最大化情况下，鼠标双击分割条不能正常展开/收缩导航栏。<br>
+		错误修正：某些多页TIFF页码顺序错误。<br>
+		错误修正：如果多页TIFF文件的x、y向DPI不相等，显示效果不佳。<br>
+		错误修正：某些灰度图像缩小显示不正确。<br>
+		错误修正：在OCR对话框中，有时候选择框角点处光标显示不正确。<br>
+		错误修正：如果书籍名字中有半角中括号，则该书的书签会有问题。<br>
+		错误修正：修正简体中文版错误提示中的错别字。<br>
+		错误修正：在Win 98/Me下，目录反复滚动后，显示混乱。<br>
+		错误修正：双页并排打印时，如果只打印奇数页或偶数页，打印出的页码不正确。<p>Version 0.12<br>
+		新增功能：“并排左翻”选项。选中后，并排显示时从右往左翻页，以符合竖排书籍的阅读习惯。在打印对话框里也增加相同的选项，用于控制并排打印。
+		现在谁还再说UnicornViewer的并排显示不如ComicsViewer？<br>
+		新增功能：裁边。ComicsViewer按像素裁，UnicornViewer按百分比裁。<br>
+		新增功能：OCR，OCR引擎为微软Office 2003所带的Microsoft Office Document Imaging (MODI)，支持英文、简体中文、繁体中文、日文。<br>
+		功能增强：在书签、自动恢复中，能够记录当前页面布局、放大率、裁剪率。<p>Version 0.11a<br>
+		错误修正：在按ESC键缩小到屏幕右下角后，如果选择了“所有文件集中在一个UnicornViewer里打开”，并再次运行UnicornViewer，不能自动激活已缩小的第一个UnicornViewer。<br>
+		错误修正：多页TIFF打印预览、打印全为白页。<br>
+		错误修正：如果同一文档在多个窗口中显示，选择“文档属性”时，显示的是第一个窗口中页面的属性，而不是当前窗口中的页面属性。<br>
+		错误修正：在查看多页TIFF文件的“文档属性”时，末尾会出现多余的乱码。<p>Version 0.11<br>
+		新增功能：支持名为PDG，实为DjVu的文件。<br>
+		新增功能：支持名为PDG，实为单页TIFF的文件。<br>
+		新增功能：“无目录时用页码代替目录（TIFF）”。用取巧的办法加快多页TIFF的打开速度。<br>
+		功能增强：优化图像缩放过程，以加快速度。<br>
+		功能增强：重写了DjVu解码过程。以前的代码废话太多，现在改用来自DjVuToy的简化版。<br>
+		功能增强：JPG解码不再使用cximage，改用来自ComicsViewer的简化过程。<br>
+		功能增强：显示放大镜时自动隐藏光标。在ComicsViewer里是记得隐藏的，在这里一直忘记了。<br>
+		功能增强：“整理书签”对话框中，增加底部提示区面积，以显示较长的文件路径。<br>
+		错误修正：在打开某些经过Photoshop处理的JPG文件时，会出现闪烁。<br>
+		错误修正：主窗口背景logo中，scanned错拼成scaned。<br>
+		错误修正：索引色PNG不能设置背景色。<br>
+		错误修正：图像旋转显示后，显示不清晰。<br>
+		错误修正：图像旋转后，打印结果不正确。<p>Version 0.10<br>
+		软件结构大调整。这次调整代价巨大，有些地方推倒重来了不止一次，但是收获不菲，以前久悬未决的一些问题迎刃而解，包括：内存占用、背景图案、同时在多个窗口中浏览同一个文档（巧合的是，WinDjView和CAJViewer都不支持“Windows-&gt;New 
+		Window”菜单，嘿嘿……）等。<br>
+		新增功能：支持背景图案。仅对黑白页面有效。<br>
+		新增功能：文件-&gt;复制到，将当前正在浏览的PDG文件复制到指定文件夹。转自ComicsViewer。<br>
+		新增功能：支持通过拖拽打开文件夹。<br>
+		功能增强：优化内存使用，内存占用量比以前减少了许多。<br>
+		功能增强：如果选择了“自动恢复”功能，下次启动时能自动激活退出时的活动窗口。<br>
+		功能修正：PDG缩略图显示文件名，而不再是页码。<br>
+		功能修正：用户选择打开书签时，如果书签已经失效，将提示用户删除该书签。<br>
+		错误修正：彻底解决同一文档在多个窗口中同时显示时，容易出错退出的问题。<br>
+		错误修正：某些彩色2色调色板TIFF显示不正确。<br>
+		错误修正：某些PNG文件显示不正确。<br>
+		错误修正：在打开多页TIFF时，如果是OJPEG压缩的，所有页面均显示为第1页图像。<br>
+		错误修正：用鼠标选择左侧目录项时，有时选中的不是所点的。<br>
+		错误修正：如果打开的zip文件里没有合法的PDG，则程序会被挂起，或出错退出。<br>
+		错误修正：如果浏览窗口没有最大化，双击分隔条不能打开/关闭导航条。<br>
+		按照功能调整，重新排布工具条按钮，并在主窗口背景中显示LOGO。<p>Version 0.09<br>
+		支持名为PDG，实为PNG的文件。<br>
+		兼容某些JPEG压缩的TIFF文件。<br>
+		更改了左侧导航条的显示方式，以节省空间。<p>Version 0.08a<br>
+		错误修正：在自定义快捷键时，个别键定义不正确。<p>Version 0.08<br>
+		新增功能：PDG文件查找，可以按照关键字搜索PDG文件夹/zip文件名、Bookcontents.dat、BookInfo.dat。支持多关键字，关键字之间用空格分隔，关键字之间的关系是“与”关系。<br>
+		新增功能：PDG目录查找，可以按照关键字搜索PDG目录（书签）。支持多关键字，关键字之间用空格分隔，关键字之间的关系是“与”关系。<br>
+		新增功能：自定义快捷键，可以为所有菜单重新定义快捷键。<br>
+		新增功能：与PdgCntEditor联动，实现PDG目录编辑功能。<p>Version 0.07b<br>
+	功能修正：在v0.07a中，为了避免同一本书在多个窗口中同时显示时出现问题，对文档加了锁，导致在用单窗口显示时翻页速度下降。考虑到用多窗口看同一本书的情况毕竟少见，因此改成智能判断，只有在同一本书打开多个窗口时才加锁，以提升单窗口时的翻页速度。<p>Version 0.07a<br>
+		功能增强：加快解析BookContents.dat，以免在打开条目很多的BookContents.dat时，因速度过慢而被误认为死机。<br>
+		错误修正：如果zip里有以数字开头的文件夹，UV打开后一片空白。<br>
+		错误修正：选择“窗口-&gt;新建窗口”后，新建窗口的目录不显示，要切换一下窗口才能显示。<br>
+	错误修正：选择“窗口-&gt;新建窗口”后，有时会出错退出。<br>
+	错误修正：不支持封底页（文件名为bac001.pdg、bac002.pdg）。<p>Version 0.07<br>
+		新增功能：打开、折叠全部目录项。目录项很多时需要耐心等待。<br>
+		功能调整：每次打开书籍的时候，保存一次“最近图书”列表，防止因为意外退出而丢失打开书籍信息。原先是程序正常退出的时候才一次保存。<br>
+		功能调整：“打开散页PDG时定位到第一页”缺省改为不选中，免得总有人问为什么不能精确打开指定的PDG页。<br>
+		错误修正：如果自动补充了PDG目录项，原PDG目录项会排在自动补充的目录项的下级。<br>
+		错误修正：在选择“自动恢复”后，某些已经关闭的书籍下次运行还会打开。<br>
+		错误修正：通过命令行参数、文件拖拽打开PDG文件时，总是定位在第一页。<br>
+		错误修正：某些JPG文件显示比例不正确。<p>Version 0.06<br>
+		新增功能：“所有文件集中在一个UnicornViewer里打开”选项。<br>
+		新增功能：在状态条上显示页面尺寸。<br>
+		功能增强：优化“单页连续”显示模式的内存占用。<br>
+		功能增强：兼容某些非标准格式的BookContents.dat，这些BookContents.dat由于缺少字段，在以前的版本中打开比较缓慢。<br>
+		功能修正：在“整理书签”对话框中，如果书签项对应的是文件夹，显示时去掉文件夹中的文件名，以免误会。<br>
+		功能修正：打开PDG文件夹时，缺省文件夹为当前书籍所在文件夹。如果当前没有书籍被打开，则为最后一次打开书籍所在文件夹。<p>Version 0.05a<br>
+		新增功能：打开PDG文件夹。<br>
+		新增功能：通过菜单、工具条按钮、快捷键、鼠标双击分隔条等方式打开/关闭导航条。<br>
+		功能修正：主窗口背景改成黑色。原来的深灰色在某些液晶屏上会闪烁。<br>
+		错误修正：先打开书籍，然后关闭，再打开一本书籍，页面跳转条处于未初始化状态。<br>
+		错误修正：查看zip文件的属性时，不能显示zip中BookInfo.dat的内容。<br>
+		错误修正：“另存为”图像文件时，某些文件实际类型与指定的类型不符。<br>
+		错误修正：在打开灰度JPG后，如果设置了背景色，背景部分可能出现色块。<p>Version 0.05<br>
+		新增功能：加入书签、书签管理。<br>
+		新增功能：现场保存/恢复。<br>
+		新增功能：按下“跳至指定页”快捷键后，光标定位到“页面跳转”条的页码输入框。如果输入的页码大于当前栏目的页码数，并且当前栏目不是正文页，则跳转到正文中的该页码处。<br>
+		新增功能：另存为，能够将页面另存为JPG、BMP、PNG、TIFF。<br>
+		新增功能：记忆工具条、状态条的打开/关闭状态。<br>
+		新增功能：支持通过拖拽打开文件。<br>
+		新增功能：在没有文件被打开的情况下，双击主窗口空白区弹出打开文件对话框。<br>
+		新增功能：“打开散页PDG时定位到第一页”选项。<br>
+		功能增强：可以完全隐藏左侧导航条（拉到最左侧后再拉一次）。<br>
+		功能增强：在“页面跳转”条中用鼠标点击“页码”框中的上、下箭头，翻到头后自动改变栏目。<br>
+		功能修正：在“单页连续”、“双页连续”模式下，翻页高度、宽度为窗口高度、宽度。<p>Version 0.04<br>
+		新增功能：直接从ZIP文件读取PDG，中间不生成任何临时文件。支持加密ZIP并能记忆密码。<p>Version 0.03<br>
+		软件名称从UniReader更改为UnicornViewer。<br>
+		功能调整：“启动时显示‘页面跳转’条”缺省改为选中，这样拖动滚动条时能看到当前页码。<br>
+		错误修正：“页面跳转”不随主窗口位置变动而变动，主窗口缩到最小后还留在屏幕上。<br>
+		错误修正：通过命令行打开文件时，底部页面TAB显示不正常。<p>Version 0.02<br>
+		新增选项：启动时显示“页面跳转”对话框。该对话框的位置也调整到屏幕右上角。<br>
+		功能增强：在进入“全屏”时，保持当前显示方式（单页、双页、连续）、缩放比例不变。<br>
+		功能调整：更改了“适合页面”、“100%”的快捷键，见使用说明。<br>
+		错误修正：在选择“实际大小”后，黑白页面的背景色固定为白色。<p>Version 0.01<br>
+      	支持PDG、多页TIFF。<br>
+		支持旋转、缩放、连续浏览、打印。</td>
+  </tr>
+</table>
+</center></div>
+</body>
+</html>

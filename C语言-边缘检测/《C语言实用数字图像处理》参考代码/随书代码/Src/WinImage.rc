@@ -1,0 +1,399 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "WinImage.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+MAINMENU MENU 
+BEGIN
+    POPUP "ファイル"
+    BEGIN
+        MENUITEM "BMP（モノクロ／カラー）ファイル読み込み",       MENU_READ_BMP
+        MENUITEM "BMP（モノクロ）ファイル書き出し",           MENU_WRITE_BMP
+        MENUITEM SEPARATOR
+        MENUITEM "ローデータ（モノクロ）読み込み",             MENU_READ_RAW
+        MENUITEM "ローデータ（モノクロ）書き出し",             MENU_WRITE_RAW
+        MENUITEM SEPARATOR
+        MENUITEM "印刷",                          MENU_PRINT
+        MENUITEM SEPARATOR
+        MENUITEM "終了",                          MENU_QUIT
+    END
+    POPUP "編集"
+    BEGIN
+        MENUITEM "元に戻す",                        MENU_UNDO
+        MENUITEM SEPARATOR
+        POPUP "クリア"
+        BEGIN
+            MENUITEM "メイン画像",                       MENU_CLEAR_MAIN
+            MENUITEM "サブﾞ画像",                       MENU_CLEAR_SUB
+            MENUITEM "キー画像",                        MENU_CLEAR_KEY
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "クリップボード→メイン画像",               MENU_COPY_CM
+        MENUITEM "メイン画像→クリップボード",               MENU_COPY_MC
+        MENUITEM SEPARATOR
+        MENUITEM "メイン画像→サブﾞ画像",                 MENU_COPY_MS
+        MENUITEM "メイン画像→キー画像",                  MENU_COPY_MK
+        MENUITEM SEPARATOR
+        MENUITEM "サブﾞ画像→メイン画像",                 MENU_COPY_SM
+        MENUITEM "キー画像→メイン画像",                  MENU_COPY_KM
+        MENUITEM SEPARATOR
+        MENUITEM "白黒反転",                        MENU_INV
+        MENUITEM SEPARATOR
+        MENUITEM "加算（MAIN + SUB）",              MENU_ADD
+        MENUITEM "減算（MAIN - SUB)",              MENU_SUB
+        MENUITEM "差分(|MAIN - SUB|)",            MENU_DIF
+        MENUITEM "乗算（MAIN * SUB）",              MENU_MPY
+        MENUITEM SEPARATOR
+        MENUITEM "論理和（MAIN｜SUB）",               MENU_OR
+        MENUITEM "論理積（MAIN ＆ SUB ）",            MENU_AND
+    END
+    POPUP "領域抽出"
+    BEGIN
+        MENUITEM "ヒストグラム",                      MENU_HIST
+        MENUITEM "ヒストグラム印字",                    MENU_HISTPRIN
+        MENUITEM "ヒストグラム平滑化",                   MENU_HIST_SMOTH
+        MENUITEM "閾値処理（手動）",                    MENU_THRESH_MAN
+        MENUITEM "閾値処理（モードﾞ法）",                 MENU_THRESH_MODE
+        MENUITEM "閾値処理（判別分析法）",                 MENU_THRESH_DISCRIM
+        MENUITEM "動的閾値処理",                      MENU_THRESH_DYNAMIC
+    END
+    POPUP "輪郭抽出"
+    BEGIN
+        POPUP "グラディエント"
+        BEGIN
+            MENUITEM "通常の差分",                       MENU_GRADIENT_DIFFERENCE
+            MENUITEM "Roberts",                     MENU_GRADIENT_ROBERTS
+            MENUITEM "Sobel",                       MENU_GRADIENT_SOBEL
+        END
+        MENUITEM "テンプレート",                      MENU_TEMPLATE
+        POPUP "ラプラシアン"
+        BEGIN
+            MENUITEM "ラプラシアン１",                     MENU_LAPLACIAN1
+            MENUITEM "ラプラシアン２",                     MENU_LAPLACIAN2
+            MENUITEM "ラプラシアン３",                     MENU_LAPLACIAN3
+        END
+        MENUITEM "ゼロ交差",                        MENU_ZEROCROSS
+        MENUITEM "細線化",                         MENU_THIN
+        MENUITEM SEPARATOR
+        MENUITEM "直線検出（Hough変換）",               MENU_HOUGH
+        MENUITEM "直線の交点（Hough）",                MENU_HOUGH_CROSS
+    END
+    POPUP "雑音除去"
+    BEGIN
+        MENUITEM "移動平均",                        MENU_SMOOTH
+        MENUITEM "重み付き移動平均",                    MENU_SMOOTHWT
+        MENUITEM "メディアン",                       MENU_MEDIAN
+        MENUITEM "エッジﾞ保存平滑化",                   MENU_SMOOTHEDGE
+        MENUITEM "膨張",                          MENU_DILATION
+        MENUITEM "収縮",                          MENU_EROSION
+        MENUITEM SEPARATOR
+        MENUITEM "LoG",                         MENU_LOG
+        MENUITEM SEPARATOR
+        POPUP "雑音付加"
+        BEGIN
+            MENUITEM "ランダムノイズﾞ",                    MENU_NOISE_RAND
+            MENUITEM "スパイクノイズﾞ",                    MENU_NOISE_SPIKE
+        END
+    END
+    POPUP "濃度変換"
+    BEGIN
+        MENUITEM "濃度調整(手動)",                    MENU_AMP
+        MENUITEM "濃度調整(自動)",                    MENU_RANGE
+        MENUITEM "ヒストグラム平坦化",                   MENU_PLANE
+        MENUITEM SEPARATOR
+        MENUITEM "ディザ（組織的ディザ法）",                MENU_DITHER_O
+        MENUITEM "ディザ（平均誤差最小法）",                MENU_DITHER_M
+        MENUITEM "ディザ（平均誤差最小法（多階調））",           MENU_DITHER_M_M
+        MENUITEM "量子化",                         MENU_QUANTIZE
+    END
+    POPUP "特徴抽出"
+    BEGIN
+        MENUITEM "特徴パラメータ",                     MENU_FEATURE
+        MENUITEM "キー画像でマスク",                    MENU_KEYMASK
+        MENUITEM "キー反転",                        MENU_KEYINV
+    END
+    POPUP "変形"
+    BEGIN
+        MENUITEM "拡大・縮小（NG）",                   MENU_SCALE_NG
+        MENUITEM "拡大・縮小（最近傍法）",                 MENU_SCALE_NE
+        MENUITEM "拡大・縮小（線形補間法）",                MENU_SCALE
+        MENUITEM "移動（線形補間法）",                   MENU_SHIFT
+        MENUITEM "回転（線形補間法）",                   MENU_ROTATE
+        MENUITEM "拡大・縮小・回転・移動(線形補間法)",          MENU_SCALEROTSHIFT
+        MENUITEM "アフィン変換（係数入力, 線形補間法）",         MENU_AFFINE
+        MENUITEM "線形歪補正",                       MENU_AFFINECOEF
+        MENUITEM "射影歪補正",                       MENU_PERSPECT
+        MENUITEM "歪曲収差補正",                      MENU_RADISTORT
+        MENUITEM SEPARATOR
+        MENUITEM "格子画像",                        MENU_LATTICE
+    END
+    POPUP "モザイク"
+    BEGIN
+        MENUITEM "座標カーソル表示",                    MENU_CSR
+        MENUITEM "張り合せ（係数入力)",                  MENU_MOSAIC
+        MENUITEM "張り合せ（対応点入力)",                 MENU_MOSAICCOEF
+        MENUITEM "自動張り合せ(ブロックマッチング)",           MENU_MOSAIC_BLOCK
+    END
+    POPUP "距離"
+    BEGIN
+        MENUITEM "ステレオ（差分）",                    MENU_STEREO_DIFF
+        MENUITEM "ステレオ（相関）",                    MENU_STEREO_CORRE
+    END
+    POPUP "周波数処理"
+    BEGIN
+        MENUITEM "FFT",                         MENU_FFTIMAGE
+        MENUITEM "FFTフィルタ",                     MENU_FFTFILTER
+    END
+    POPUP "圧縮"
+    BEGIN
+        MENUITEM "符号化",                         MENU_ENCODE
+        MENUITEM "復号化",                         MENU_DECODE
+    END
+END
+
+SUBMENU MENU 
+BEGIN
+    POPUP "ポップアップメニュー"
+    BEGIN
+        MENUITEM "クリア",                         MENU_CLEAR
+        MENUITEM SEPARATOR
+        MENUITEM "コピー",                         MENU_COPY
+        MENUITEM "貼り込み",                        MENU_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "BMP（モノクロ／カラー）ファイル読み込み",       MENU_READ_BMP_SUB
+        MENUITEM "BMP（モノクロ）ファイル書き出し",           MENU_WRITE_BMP_SUB
+    END
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "WinImage.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+DIALOG_1 DIALOGEX 0, 0, 183, 51
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,126,7,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,126,24,50,14
+    EDITTEXT        IDC_EDIT1,7,7,79,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT2,7,29,40,14,ES_AUTOHSCROLL
+END
+
+DIALOG_2 DIALOGEX 0, 0, 186, 75
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,129,24,50,14
+    EDITTEXT        IDC_EDIT1,7,7,88,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT2,7,31,40,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT3,55,32,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,7,53,40,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT5,56,54,40,14,ES_AUTOHSCROLL
+END
+
+DIALOG_3 DIALOGEX 0, 0, 187, 93
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,130,24,50,14
+    EDITTEXT        IDC_EDIT1,7,7,89,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT2,7,28,40,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT3,55,28,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,7,49,40,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT5,55,47,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,7,72,40,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT7,55,72,40,14,ES_AUTOHSCROLL
+END
+
+DIALOG_S2 DIALOGEX 0, 0, 187, 69
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 9, "ＭＳ Ｐゴシック", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,130,7,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,130,24,50,14
+    EDITTEXT        IDC_EDIT1,7,7,94,15,ES_AUTOHSCROLL | ES_READONLY
+    CONTROL         "オプション1",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,14,33,90,12
+    CONTROL         "オプション1",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,15,49,89,13
+END
+
+DIALOG_S3 DIALOGEX 0, 0, 209, 66
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,152,7,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,152,24,50,14
+    CONTROL         "オプション1",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON,11,25,49,10
+    CONTROL         "オプション1",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,11,37,49,10
+    CONTROL         "オプション1",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,11,48,49,10
+    EDITTEXT        IDC_EDIT1,7,7,109,14,ES_AUTOHSCROLL | ES_READONLY
+END
+
+DIALOG_T DIALOGEX 0, 0, 316, 170
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,259,7,50,14
+    EDITTEXT        IDC_EDIT1,7,7,149,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT2,7,21,302,142,ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+END
+
+DIALOG_5 DIALOGEX 0, 0, 228, 118
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,171,7,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,171,24,50,14
+    EDITTEXT        IDC_EDIT1,7,7,154,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT2,7,27,61,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT3,78,26,60,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,7,45,62,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT5,78,45,62,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,7,62,63,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT7,79,62,60,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,7,79,65,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT9,78,78,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT10,7,97,66,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT11,78,97,62,14,ES_AUTOHSCROLL
+END
+
+DIALOG_6 DIALOGEX 0, 0, 225, 137
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,168,7,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,168,24,50,14
+    EDITTEXT        IDC_EDIT1,7,7,154,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT2,7,27,61,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT3,78,26,60,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,7,45,62,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT5,78,45,62,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,7,62,63,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT7,79,62,60,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,7,79,65,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT9,78,78,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT10,7,98,66,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT11,78,98,62,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT12,7,116,67,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT13,77,115,61,14,ES_AUTOHSCROLL
+END
+
+DIALOG_4 DIALOGEX 0, 0, 221, 97
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,164,7,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,164,24,50,14
+    EDITTEXT        IDC_EDIT1,7,7,136,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT2,7,25,61,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT3,80,26,69,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,7,42,62,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT5,82,43,68,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,7,60,63,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT7,81,59,71,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,7,76,64,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT9,80,74,71,14,ES_AUTOHSCROLL
+END
+
+DIALOG_8 DIALOGEX 0, 0, 222, 172
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,165,7,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,165,24,50,14
+    EDITTEXT        IDC_EDIT1,7,7,154,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT2,7,27,61,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT3,78,26,60,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,7,45,62,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT5,78,45,62,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,7,62,63,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT7,79,62,60,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,7,79,65,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT9,78,78,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT10,7,98,66,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT11,78,98,62,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT12,7,116,67,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT13,77,115,61,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT14,7,135,67,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT15,78,135,63,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT16,7,151,69,14,ES_AUTOHSCROLL | ES_READONLY
+    EDITTEXT        IDC_EDIT17,78,151,67,14,ES_AUTOHSCROLL
+END
+
+#endif    // 日本語 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

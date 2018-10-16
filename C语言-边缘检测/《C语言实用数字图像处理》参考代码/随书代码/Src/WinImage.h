@@ -1,0 +1,121 @@
+//{{NO_DEPENDENCIES}}
+// Microsoft Visual C++ generated include file.
+// Used by WinImage.rc
+//
+#define IDC_EDIT1                       1001
+#define IDC_EDIT2                       1002
+#define IDC_EDIT3                       1003
+#define IDC_EDIT4                       1004
+#define IDC_EDIT5                       1005
+#define IDC_EDIT6                       1006
+#define IDC_EDIT7                       1007
+#define IDC_EDIT8                       1008
+#define IDC_EDIT9                       1009
+#define IDC_EDIT10                      1010
+#define IDC_EDIT11                      1011
+#define IDC_EDIT12                      1012
+#define IDC_EDIT13                      1013
+#define IDC_EDIT14                      1014
+#define IDC_EDIT15                      1015
+#define IDC_EDIT16                      1016
+#define IDC_EDIT17                      1017
+#define IDC_RADIO1                      1021
+#define IDC_RADIO2                      1022
+#define IDC_RADIO3                      1023
+#define MENU_READ_BMP                   40001
+#define MENU_WRITE_BMP                  40002
+#define MENU_READ_RAW                   40003
+#define MENU_WRITE_RAW                  40004
+#define MENU_PRINT                      40005
+#define MENU_QUIT                       40006
+#define MENU_UNDO                       40101
+#define MENU_CLEAR_MAIN                 40102
+#define MENU_CLEAR_SUB                  40103
+#define MENU_CLEAR_KEY                  40104
+#define MENU_COPY_CM                    40105
+#define MENU_COPY_MC                    40106
+#define MENU_COPY_MS                    40107
+#define MENU_COPY_MK                    40108
+#define MENU_COPY_SM                    40109
+#define MENU_COPY_KM                    40110
+#define MENU_INV                        40111
+#define MENU_ADD                        40112
+#define MENU_SUB                        40113
+#define MENU_DIF                        40114
+#define MENU_MPY                        40115
+#define MENU_OR                         40116
+#define MENU_AND                        40117
+#define MENU_HIST                       40201
+#define MENU_HISTPRIN                   40202
+#define MENU_HIST_SMOTH                 40203
+#define MENU_THRESH_MAN                 40204
+#define MENU_THRESH_MODE                40205
+#define MENU_THRESH_DISCRIM             40206
+#define MENU_THRESH_DYNAMIC             40207
+#define MENU_GRADIENT_DIFFERENCE        40301
+#define MENU_GRADIENT_ROBERTS           40302
+#define MENU_GRADIENT_SOBEL             40303
+#define MENU_TEMPLATE                   40304
+#define MENU_LAPLACIAN1                 40305
+#define MENU_LAPLACIAN2                 40306
+#define MENU_LAPLACIAN3                 40307
+#define MENU_ZEROCROSS                  40308
+#define MENU_THIN                       40309
+#define MENU_HOUGH                      40310
+#define MENU_HOUGH_CROSS                40311
+#define MENU_SMOOTH                     40401
+#define MENU_SMOOTHWT                   40402
+#define MENU_MEDIAN                     40403
+#define MENU_SMOOTHEDGE                 40404
+#define MENU_DILATION                   40405
+#define MENU_EROSION                    40406
+#define MENU_LOG                        40407
+#define MENU_NOISE_RAND                 40408
+#define MENU_NOISE_SPIKE                40409
+#define MENU_AMP                        40501
+#define MENU_RANGE                      40502
+#define MENU_PLANE                      40503
+#define MENU_DITHER_O                   40504
+#define MENU_DITHER_M                   40505
+#define MENU_DITHER_M_M                 40506
+#define MENU_QUANTIZE                   40507
+#define MENU_FEATURE                    40601
+#define MENU_KEYMASK                    40602
+#define MENU_KEYINV                     40603
+#define MENU_SCALE_NG                   40701
+#define MENU_SCALE_NE                   40702
+#define MENU_SCALE                      40703
+#define MENU_SHIFT                      40704
+#define MENU_ROTATE                     40705
+#define MENU_SCALEROTSHIFT              40706
+#define MENU_AFFINE                     40707
+#define MENU_AFFINECOEF                 40708
+#define MENU_PERSPECT                   40709
+#define MENU_RADISTORT                  40710
+#define MENU_LATTICE                    40711
+#define MENU_FFTIMAGE                   40801
+#define MENU_FFTFILTER                  40802
+#define MENU_ENCODE                     40901
+#define MENU_DECODE                     40902
+#define MENU_STEREO_DIFF                41001
+#define MENU_STEREO_CORRE               41002
+#define MENU_CSR                        41101
+#define MENU_MOSAIC                     41102
+#define MENU_MOSAICCOEF                 41103
+#define MENU_MOSAIC_BLOCK               41104
+#define MENU_CLEAR                      41201
+#define MENU_COPY                       41202
+#define MENU_PASTE                      41203
+#define MENU_READ_BMP_SUB               41204
+#define MENU_WRITE_BMP_SUB              41205
+
+// Next default values for new objects
+// 
+#ifdef APSTUDIO_INVOKED
+#ifndef APSTUDIO_READONLY_SYMBOLS
+#define _APS_NEXT_RESOURCE_VALUE        113
+#define _APS_NEXT_COMMAND_VALUE         41300
+#define _APS_NEXT_CONTROL_VALUE         1030
+#define _APS_NEXT_SYMED_VALUE           101
+#endif
+#endif
